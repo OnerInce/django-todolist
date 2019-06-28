@@ -1,0 +1,22 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>To-do List</title>
+
+</head>
+
+<body>
+  <form method='POST'>
+    {% csrf_token %}
+  <h1>Add a Job to To-do List</h1>
+  
+  <a href="{% url 'list' %}">See All Added Tasks</a>
+  <br>
+  {{form.as_p}}
+  <input type='submit' value='Submit'>
+  </form>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>List all Jobs</title>
+
+</head>
+
+<body>
+
+  <ul>
+
+  <a href="{% url 'index' %}">Go Back and Add a New Task</a>
+  <br>
+  <br>
+  {% for job in allJobs %}
+        <li>{{job.jobName}}
+          {{job.dateAdded}}
+          {{job.isCompleted}}
+        <form action = '/delete/{{job.id}}'
+        style='display : inline;'
+        method = 'post'>{% csrf_token %}
+        <input type='submit' value='Delete'>
+        </form>
+        <form action = '/complete/{{job.id}}'
+        style='display : inline;'
+        method = 'post'>{% csrf_token %}
+        <input type='submit' value='Mark as Completed'>
+        </form>
+        <br>
+  {% endfor %}
+
+</body>
+</html>

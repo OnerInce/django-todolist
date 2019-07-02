@@ -17,18 +17,28 @@
   <br>
   {% for job in allJobs %}
         <li>{{job.jobName}}
-          {{job.dateAdded}}
-          {{job.isCompleted}}
+           - {{job.dateAdded}}
+          {% if job.isCompleted == True %}
+          <a>
+            ---- > Completed
+         </a>
+          {% else %}
+          <a>
+           ---- > Not Completed
+         </a>
+          {% endif %}
         <form action = '/delete/{{job.id}}'
         style='display : inline;'
         method = 'post'>{% csrf_token %}
         <input type='submit' value='Delete'>
         </form>
+        {% if job.isCompleted == False %}
         <form action = '/complete/{{job.id}}'
         style='display : inline;'
         method = 'post'>{% csrf_token %}
         <input type='submit' value='Mark as Completed'>
         </form>
+        {% endif %}
         <br>
   {% endfor %}
 

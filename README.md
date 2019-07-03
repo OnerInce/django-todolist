@@ -1,8 +1,20 @@
-# django-todolist
+# to-do list
 
+## Table of Contents
++ [About](#about)
++ [Prerequisites](#prereq)
++ [Usage](#usage)
+
+## About <a name = "about"></a>
 Simple to-do list application made in Django framework using sqllite3 database.
 
-**Application has two pages :**
+### Prerequisites <a name = "prereq"></a>
+
+Django 2.x and Python3 must be installed
+
+## Usage <a name = "usage"></a>
+
+python3 manage.py runserver
 
 - Adding a new job to list with DateTimeField
 

@@ -18,10 +18,10 @@ python3 manage.py runserver
 
 - Adding a new job to list with DateTimeField
 
-<img src="index.JPG" width="300" height="170">
+<img src="index.JPG" width="270" height="150">
 
 - Listing all current jobs (sorted by completion status and date)
 
-<img src="list.JPG" width="600" height="160">
+<img src="list.JPG" width="500" height="130">
 
 In second page, it is also possible to mark job as completed or delete it completely. 

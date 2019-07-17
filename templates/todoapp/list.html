@@ -1,22 +1,40 @@
-<!doctype html>
+{% load static %}
 
-<html lang="en">
+<!DOCTYPE html>
+<html>
+
 <head>
-  <meta charset="utf-8">
-
-  <title>List all Jobs</title>
-
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>List All Tasks</title>
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css'%}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="{% static 'css/Contact-Form-Clean.css'%}">
 </head>
 
-<body>
-
-  <ul>
-
-  <a href="{% url 'index' %}">Go Back and Add a New Task</a>
-  <br>
-  <br>
-  {% for job in allJobs %}
-        <li>{{job.jobName}}
+<body id="page-top">
+    <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-secondary text-uppercase" id="mainNav">
+        <div class="container"><a class="navbar-brand js-scroll-trigger" href="#page-top">to - do list organizer</a><button data-toggle="collapse" data-target="#navbarResponsive" class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded" aria-controls="navbarResponsive"
+                aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item mx-0 mx-lg-1" role="presentation"></li>
+                    <li class="nav-item mx-0 mx-lg-1" role="presentation"></li>
+                    <li class="nav-item mx-0 mx-lg-1" role="presentation"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="/">GO BACK AND ADD A NEW TASK</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <header class="masthead bg-primary text-white text-center">
+        <div class="container">
+            <h3 style="margin-top: 0px;">List of All Added Tasks</h3>
+            <hr class="star-light">
+		<br>
+		<br>
+		  {% for job in allJobs %}
+        <li><font size="4">{{job.jobName}}
            - {{job.dateAdded}}
           {% if job.isCompleted == True %}
           <a>
@@ -26,21 +44,29 @@
           <a>
            ---- > Not Completed
          </a>
-          {% endif %}
+          {% endif %}</font>
         <form action = '/delete/{{job.id}}'
-        style='display : inline;'
-        method = 'post'>{% csrf_token %}
-        <input type='submit' value='Delete'>
+        style= "display : inline; margin-left:20px;"
+        method = 'post'>
+{% csrf_token %}
+        <input class="btn btn-success active btn-lg" type='submit' value='Delete'>
         </form>
         {% if job.isCompleted == False %}
         <form action = '/complete/{{job.id}}'
-        style='display : inline;'
+        style="display : inline; margin-left:20px;"
         method = 'post'>{% csrf_token %}
-        <input type='submit' value='Mark as Completed'>
+        <input class="btn btn-success active btn-lg" type='submit' value='Mark as Completed'>
         </form>
         {% endif %}
         <br>
   {% endfor %}
+            <h2 class="font-weight-light mb-0"></h2>
+        </div>
+    </header>
+    <div class="copyright py-4 text-center text-white">
+        <div class="container"><small>OnerInce</small></div>
+    </div>
 
 </body>
+
 </html>

@@ -1,22 +1,51 @@
-<!doctype html>
+{% load static %}
 
-<html lang="en">
+<!DOCTYPE html>
+<html class="text-center text-success">
+
 <head>
-  <meta charset="utf-8">
-
-  <title>To-do List</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>To-Do List</title>
+	
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css'%}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="{% static 'css/Contact-Form-Clean.css'%}">
 
 </head>
 
-<body>
-  <form method='POST'>
-    {% csrf_token %}
-  <h1>Add a Job to To-do List</h1>
-
-  <a href="{% url 'list' %}">See All Added Tasks</a>
-  <br>
+<body id="page-top">
+    <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-secondary text-uppercase" id="mainNav">
+        <div class="container"><a class="navbar-brand js-scroll-trigger" href="/">to - do lIST ORGANIZER</a><button data-toggle="collapse" data-target="#navbarResponsive" class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded" aria-controls="navbarResponsive"
+                aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item mx-0 mx-lg-1" role="presentation"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="/list">see all added tasks</a></li>
+                    <li class="nav-item mx-0 mx-lg-1" role="presentation"></li>
+                    <li class="nav-item mx-0 mx-lg-1" role="presentation"></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <header class="masthead bg-primary text-white text-center">
+        <div class="container" style="margin: 0px 350px;margin-right: 350px;margin-left: 350px;"><img class="img-fluid d-block mx-auto mb-5" src="{% static 'img/index.jpeg'%}">
+            <h4 class="display-3">Add a New Task</h4>
+            <hr class="star-light">
+            <h2 class="display-1 font-weight-light mb-0" style="margin: 3px;">Enter the Date and Task Name:</h2>
+	<br>
+        </div>
+        <form method="post">
+	{% csrf_token %}
   {{form.as_p}}
-  <input type='submit' value='Submit'>
-  </form>
+  <input class="btn btn-success active btn-lg" type='submit' value='Submit'>
+        </form>
+    </header>
+    <div class="copyright py-4 text-center text-white">
+        <div class="container"><small>OnerInce</small></div>
+    </div>
+ 
 </body>
+
 </html>

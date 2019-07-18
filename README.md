@@ -22,7 +22,7 @@ python3 manage.py runserver
 
 - Listing all current jobs (sorted by completion status and date)
 
-<img src="list.png" width="550" height="300">
+<img src="list.png" width="600" height="300">
 
 - Listing all current jobs (sorted by completion status and date)
 

@@ -1,4 +1,9 @@
-# to-do list
+<p align="center">
+  <a href="" rel="noopener">
+ <img width=200px src="https://clickup.com/blog/wp-content/uploads/2019/01/to-do-list-apps-1400x1050.png"</a>
+</p>
+<h1 align = 'center'>To-do list</h1>
+
 
 ## Table of Contents
 + [About](#about)
